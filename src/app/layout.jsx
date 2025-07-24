@@ -43,7 +43,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`antialiased text-white bg-primary`}>
         <ClientRoot>{children}</ClientRoot>
-        {children}
       </body>
     </html>
   );
