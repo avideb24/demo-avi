@@ -1,13 +1,30 @@
-"use client";
+'use client';
 
-import { AboutMe } from '@/components/cards/AboutMe/AboutMe';
-import Contact from '@/components/cards/Contact/Contact';
-import { Introduction } from '@/components/cards/Introduction/Introduction';
-import { Projects } from '@/components/cards/Projects/Projects';
-import RenderedSection from '@/components/pages/home/RenderedSection/RenderedSection';
-import { useGlobalContext } from '@/components/provider/GlobalProvider';
-import CardBox from '@/components/shared/CardBox/CardBox';
+import dynamic from 'next/dynamic';
 import React from 'react';
+
+const AboutMe = dynamic(() =>
+  import('@/components/cards/AboutMe/AboutMe').then((mod) => mod.AboutMe), { ssr: false }
+);
+const Contact = dynamic(() =>
+  import('@/components/cards/Contact/Contact').then((mod) => mod.default), { ssr: false }
+);
+const Introduction = dynamic(() =>
+  import('@/components/cards/Introduction/Introduction').then((mod) => mod.Introduction), { ssr: false }
+);
+const Projects = dynamic(() =>
+  import('@/components/cards/Projects/Projects').then((mod) => mod.Projects), { ssr: false }
+);
+const RenderedSection = dynamic(() =>
+  import('@/components/pages/home/RenderedSection/RenderedSection').then((mod) => mod.default), { ssr: false }
+);
+const CardBox = dynamic(() =>
+  import('@/components/shared/CardBox/CardBox').then((mod) => mod.default), { ssr: false }
+);
+
+
+import { useGlobalContext } from '@/components/provider/GlobalProvider';
+
 
 
 const Home = () => {
