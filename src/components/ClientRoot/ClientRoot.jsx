@@ -5,21 +5,20 @@ import dynamic from 'next/dynamic';
 const Profile = dynamic(() => import('@/components/cards/Profile/Profile').then(mod => mod.Profile), { ssr: false });
 const MobileButtons = dynamic(() => import('@/components/mobile/mobile-buttons').then(mod => mod.default), { ssr: false });
 const MobileCardModal = dynamic(() => import('@/components/mobile/mobile-card-modal').then(mod => mod.default), { ssr: false });
-
 import GlobalProvider from "@/components/provider/GlobalProvider";
 import Loading from "@/app/loading";
 
 
 export default function ClientRoot({ children }) {
-  
+
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 3500);
     return () => clearTimeout(timer);
   }, []);
 
-  
+
   return (
     <GlobalProvider>
       {loading && (
@@ -34,6 +33,7 @@ export default function ClientRoot({ children }) {
           <div className="hidden md:block lg:col-span-2">{children}</div>
         </div>
 
+        {/* Mobile */}
         <div className="lg:hidden">
           <MobileButtons />
         </div>
