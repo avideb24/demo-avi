@@ -1,5 +1,5 @@
 import "./globals.css";
-// import ClientRoot from "@/components/ClientRoot/ClientRoot";
+import ClientRoot from "@/components/ClientRoot/ClientRoot";
 
 
 export const metadata = {
@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`antialiased text-white bg-primary`}>
-        {/* <ClientRoot>{children}</ClientRoot> */}
+        <ClientRoot>{children}</ClientRoot>
         {children}
       </body>
     </html>

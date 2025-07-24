@@ -19,7 +19,8 @@ export default function ClientRoot({ children }) {
   
   return (
     <GlobalProvider>
-      {loading && (
+      layout
+      {/* {loading && (
         <div className="fixed top-0 left-0 w-full h-full z-50 bg-primary overflow-hidden">
           <Loading />
         </div>
@@ -31,12 +32,11 @@ export default function ClientRoot({ children }) {
           <div className="hidden md:block lg:col-span-2">{children}</div>
         </div>
 
-        {/* Mobile */}
         <div className="lg:hidden">
           <MobileButtons />
         </div>
         <MobileCardModal />
-      </div>
+      </div> */}
     </GlobalProvider>
   );
 }
