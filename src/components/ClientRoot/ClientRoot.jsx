@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Profile } from "@/components/cards/Profile/Profile";
-import MobileButtons from "@/components/mobile/mobile-buttons";
+// import { Profile } from "@/components/cards/Profile/Profile";
+// import MobileButtons from "@/components/mobile/mobile-buttons";
 import GlobalProvider from "@/components/provider/GlobalProvider";
-import MobileCardModal from "@/components/mobile/mobile-card-modal";
-import Loading from "@/app/loading";
+// import MobileCardModal from "@/components/mobile/mobile-card-modal";
+// import Loading from "@/app/loading";
 
 export default function ClientRoot({ children }) {
   
