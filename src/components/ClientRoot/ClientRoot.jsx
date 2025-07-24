@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import dynamic from 'next/dynamic';
-const Profile = dynamic(() => import('@/components/cards/Profile/Profile'), { ssr: false });
-const MobileButtons = dynamic(() => import('@/components/mobile/mobile-buttons'), { ssr: false });
-const MobileCardModal = dynamic(() => import('@/components/mobile/mobile-card-modal'), { ssr: false });
+const Profile = dynamic(() => import('@/components/cards/Profile/Profile').then(mod => mod.Profile), { ssr: false });
+const MobileButtons = dynamic(() => import('@/components/mobile/mobile-buttons').then(mod => mod.default), { ssr: false });
+const MobileCardModal = dynamic(() => import('@/components/mobile/mobile-card-modal').then(mod => mod.default), { ssr: false });
+
 import GlobalProvider from "@/components/provider/GlobalProvider";
 import Loading from "@/app/loading";
 
@@ -21,7 +22,6 @@ export default function ClientRoot({ children }) {
   
   return (
     <GlobalProvider>
-      layout
       {loading && (
         <div className="fixed top-0 left-0 w-full h-full z-50 bg-primary overflow-hidden">
           <Loading />
